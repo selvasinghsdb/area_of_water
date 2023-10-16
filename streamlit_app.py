@@ -3,8 +3,10 @@
 import streamlit as st
 import ee
 
-# Initialize Earth Engine.
-ee.Initialize()
+# Initialize the Earth Engine using the service account's credentials
+service_account = 'streamlit@ee-mpwbis.iam.gserviceaccount.com'
+credentials = ee.ServiceAccountCredentials(service_account, 'service-account-key.json')
+ee.Initialize(credentials)
 
 # Constants for our app
 START_DATE = '2021-04-02'
