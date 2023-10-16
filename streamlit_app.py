@@ -18,7 +18,7 @@ def get_water_area(start_date, end_date, coords):
     box = ee.Geometry.Rectangle(coords)
 
     # Filter collection
-    colFilter = ee.Filter.and(
+    colFilter = ee.Filter.And(
         ee.Filter.bounds(box),
         ee.Filter.date(ee.Date(start_date), ee.Date(end_date))
     )
